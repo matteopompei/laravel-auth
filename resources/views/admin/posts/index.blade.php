@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-  <div class="container-fluid">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
@@ -13,7 +13,6 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Titolo</th>
-                  <th scope="col">Slug</th>
                   <th scope="col">Azioni</th>
                 </tr>
               </thead>
@@ -22,8 +21,8 @@
                   <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
-                    <td>{{ $post->slug }}</td>
-                    <td></td>
+                    <td><a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-info">Vedi</a>
+                    </td>
                   </tr>
                 @endforeach
               </tbody>
