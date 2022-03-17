@@ -109,8 +109,7 @@ class PostController extends Controller
 
         $form_data['slug'] = $slugTmp;
 
-        $new_post = new Post();
-        $new_post->update($form_data);
+        $post->update($form_data);
         return redirect()->route('admin.posts.index');
     }
 
