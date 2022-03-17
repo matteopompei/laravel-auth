@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">{{ __('Lista dei post') }}</div>
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="font-weight-bold">Articoli</div>
+            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Crea nuovo post</a>
+          </div>
 
           <div class="card-body">
             <table class="table">
@@ -21,7 +24,8 @@
                   <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
-                    <td><a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-info">Vedi</a>
+                    <td>
+                      <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-info">Vedi</a>
                     </td>
                   </tr>
                 @endforeach
